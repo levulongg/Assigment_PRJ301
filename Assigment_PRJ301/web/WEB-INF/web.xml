@@ -2,19 +2,15 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>DisplayStudents</servlet-name>
-        <servlet-class>Controller.DisplayStudents</servlet-class>
+        <servlet-class>Controller.liststudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Attendance</servlet-name>
         <servlet-class>Controller.Attendance</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>liststudent</servlet-name>
-        <servlet-class>Controller.liststudent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>timetable</servlet-name>
-        <servlet-class>Controller.timetable</servlet-class>
+        <servlet-name>TimeTable</servlet-name>
+        <servlet-class>Controller.TimeTable</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DisplayStudents</servlet-name>
@@ -25,12 +21,8 @@
         <url-pattern>/Attendance</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>liststudent</servlet-name>
-        <url-pattern>/liststudent</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>timetable</servlet-name>
-        <url-pattern>/timetable</url-pattern>
+        <servlet-name>TimeTable</servlet-name>
+        <url-pattern>/TimeTable</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

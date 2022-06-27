@@ -7,6 +7,7 @@ package dal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import model.Instructor;
 import model.Student;
 
 /**
@@ -22,8 +23,8 @@ public class InstructorDAO extends DBContext{
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                Student s = new Student(rs.getInt(1), rs.getString(2), rs.getString(3));
-                Students.add(s);
+                Instructor i = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3));
+                Students.add(i);
             }
         } catch (Exception e) {
         }
