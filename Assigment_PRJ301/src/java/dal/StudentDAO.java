@@ -26,7 +26,7 @@ public class StudentDAO extends DBContext {
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                Student s = new Student(rs.getInt(1), rs.getString(2), rs.getString(3));
+                Student s = new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
                 Students.add(s);
             }
         } catch (Exception e) {

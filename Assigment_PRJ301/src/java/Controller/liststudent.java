@@ -5,6 +5,7 @@
 
 package Controller;
 
+import dal.GroupDAO;
 import dal.StudentDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,9 +33,26 @@ public class liststudent extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         StudentDAO dao = new StudentDAO();
-        ArrayList<Student> sList = dao.list();
-        request.setAttribute("sList", sList);
-        request.getRequestDispatcher("./FrontEnd/DisplayStudent.jsp").forward(request, response);
+        GroupDAO gdao = new GroupDAO();
+        String campus = request.getParameter("campus");
+        String term = request.getParameter("term");
+        String dept = request.getParameter("dept");
+        String courseid = request.getParameter("courseid");
+        String group = request.getParameter("group");
+        ArrayList campuslist = gdao.getAllCampus();
+        ArrayList termlist = gdao.getAllTerm(campus);
+        ArrayList departmentlist = gdao.getAllDep(term);
+        ArrayList courselist = gdao.getAllSubject(term, dept);
+        ArrayList grouplist = gdao.getAllGroup(term,dept,courseid);
+        
+        request.setAttribute("campuslist", campuslist);
+        request.setAttribute("termlist", termlist);
+        request.setAttribute("departmentlist", departmentlist);
+        request.setAttribute("courselist", courselist);
+        request.setAttribute("grouplist", grouplist);
+//        ArrayList<Student> sList = dao.list();
+//        request.setAttribute("sList", sList);
+        request.getRequestDispatcher("DisplayStudent.jsp").forward(request, response);
             
     } 
 
