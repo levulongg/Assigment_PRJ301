@@ -58,7 +58,7 @@ public class GroupDAO extends DBContext{
     }
     
     public ArrayList getAllSubject( String term,String dept){
-        ArrayList camp = new ArrayList() ;
+        ArrayList Subject = new ArrayList() ;
         try {
             String sql ="select distinct g.SubID,s.* from[Group] g,[Subject] s\n "
                     + "where g,SubID=s.SubID and g.Department = ? and Term = ?";
@@ -69,26 +69,26 @@ public class GroupDAO extends DBContext{
 
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-               camp.add(rs.getString(3));
+               Subject.add(rs.getString(3));
             }
         } catch (Exception e) {
         }
-        return camp;
+        return Subject;
     }
-    public ArrayList getAllClass( String term,String dept,int subjectid){
-        ArrayList camp = new ArrayList() ;
+    public ArrayList getAllGroup( String term,String dept,String subjectid){
+        ArrayList group = new ArrayList() ;
         try {
-            String sql ="select * from [Group] where and Term = ? and Department = ? and SubID=?";
+            String sql ="select * from [Group] where and Term = ? and Department = ? and SubID like ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1,term);
             stm.setString(2,dept);
-            stm.setInt(3,subjectid);
+            stm.setString(3,"%"+subjectid+"%");
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-               camp.add(rs.getString(2));
+               group.add(rs.getString(2));
             }
         } catch (Exception e) {
         }
-        return camp;
+        return group;
     }
 }

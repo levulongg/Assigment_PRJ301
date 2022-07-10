@@ -18,6 +18,10 @@ public class Instructor {
         this.name = name;
         this.userName = userName;
     }
+    public Instructor(int id, String UserName) {
+        this.id = id;
+        this.userName = userName;
+    }
 
     public int getId() {
         return id;

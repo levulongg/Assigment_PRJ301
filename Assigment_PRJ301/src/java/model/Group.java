@@ -4,22 +4,20 @@
  */
 package model;
 
-import javax.security.auth.Subject;
-
 /**
  *
  * @author sneezes
  */
 public class Group {
     private int id;
-    private String code ;
-    private Subject subject ;
+    private String code;
+    private model.Subject subject;
     private String term;
     private String campus;
-    private String department ;
+    private String department;
     private Instructor instructor;
 
-    public Group(int id, String code, Subject subject, String term, String campus, String department, Instructor instructor) {
+    public Group(int id, String code, model.Subject subject, String term, String campus, String department, Instructor instructor) {
         this.id = id;
         this.code = code;
         this.subject = subject;
@@ -29,8 +27,30 @@ public class Group {
         this.instructor = instructor;
     }
 
+    public Group(int id) {
+        this.id = id;
+    }
+
+    public Group() {
+    }
+
     public int getId() {
         return id;
+    }
+
+    public Group(int id, String code, model.Subject subject, String term, String campus) {
+        this.id = id;
+        this.code = code;
+        this.subject = subject;
+        this.term = term;
+        this.campus = campus;
+    }
+
+
+    public Group(int id, String code, model.Subject subject) {
+        this.id = id;
+        this.code = code;
+        this.subject = subject;
     }
 
     public void setId(int id) {
@@ -45,11 +65,11 @@ public class Group {
         this.code = code;
     }
 
-    public Subject getSubject() {
+    public model.Subject getSubject() {
         return subject;
     }
 
-    public void setSubject(Subject subject) {
+    public void setSubject(model.Subject subject) {
         this.subject = subject;
     }
 
@@ -84,5 +104,7 @@ public class Group {
     public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
+    
+    
     
 }

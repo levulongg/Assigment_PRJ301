@@ -14,7 +14,7 @@ public class Student {
     String fullName;
     private boolean gender;
     private String img;
-
+    
     
 
     public Student(int sid, String sCode, String fullName, boolean gender, String img) {
