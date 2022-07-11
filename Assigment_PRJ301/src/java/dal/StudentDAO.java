@@ -18,20 +18,25 @@ import model.Student;
  */
 public class StudentDAO extends DBContext {
 
-    public ArrayList<Student> list() {
-        ArrayList<Student> Students = new ArrayList<>();
-
+    public ArrayList<Student> getAllStudent(String groupcode) {
+        ArrayList<Student> alist = new ArrayList<>();
+        String sql = "select s.* , g.* from Student s, [Group] g, Enroll e\n"
+                + "  where s.SID = e.SID and g.GroupID = e.GroupID and g.GroupCode like ?";
         try {
-            String sql = "SELECT * from Student";
+            
             PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1,"%" + groupcode + "%");
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Student s = new Student(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBoolean(4), rs.getString(5));
-                Students.add(s);
+                alist.add(s);
             }
         } catch (Exception e) {
         }
-        return Students;
+        return alist;
     }
-
+    public static void main(String[] args) {
+        StudentDAO StudentDAO = new StudentDAO();
+        System.out.println(StudentDAO.getAllStudent("SE1467"));
+    }
 }

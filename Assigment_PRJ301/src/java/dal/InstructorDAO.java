@@ -16,7 +16,7 @@ import model.Student;
  */
 public class InstructorDAO extends DBContext{
     public ArrayList<Instructor> getAllInstructor() {
-        ArrayList<Instructor> Students = new ArrayList<>();
+        ArrayList<Instructor> ilist = new ArrayList<>();
 
         try {
             String sql = "SELECT * from Student";
@@ -24,10 +24,10 @@ public class InstructorDAO extends DBContext{
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Instructor i = new Instructor(rs.getInt(1), rs.getString(2), rs.getString(3));
-                Students.add(i);
+                ilist.add(i);
             }
         } catch (Exception e) {
         }
-        return Students;
+        return ilist;
     }
 }
