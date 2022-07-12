@@ -9,14 +9,26 @@ package model;
  * @author sneezes
  */
 public class Room {
+
     private int id;
-    private String Code , campus , Capasity ;
+    private String Code, campus, Capasity;
 
     public Room(int id, String Code, String campus, String Capasity) {
         this.id = id;
         this.Code = Code;
         this.campus = campus;
         this.Capasity = Capasity;
+    }
+
+    public Room(int id) {
+        this.id = id;
+    }
+
+    public Room() {
+    }
+
+    public Room(String Code) {
+        this.Code = Code;
     }
 
     public int getId() {
@@ -50,5 +62,5 @@ public class Room {
     public void setCapasity(String Capasity) {
         this.Capasity = Capasity;
     }
-    
+
 }
