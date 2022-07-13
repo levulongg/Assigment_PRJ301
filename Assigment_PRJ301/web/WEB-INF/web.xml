@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>DisplayStudents</servlet-name>
-        <servlet-class>Controller.liststudent</servlet-class>
+        <servlet-class>Controller.GroupStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Attendance</servlet-name>
@@ -10,7 +10,11 @@
     </servlet>
     <servlet>
         <servlet-name>TimeTable</servlet-name>
-        <servlet-class>Controller.TimeTable</servlet-class>
+        <servlet-class>Controller.TeachingSchedule</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateAttend</servlet-name>
+        <servlet-class>Controller.UpdateAttend</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DisplayStudents</servlet-name>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>TimeTable</servlet-name>
         <url-pattern>/TimeTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateAttend</servlet-name>
+        <url-pattern>/UpdateAttend</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

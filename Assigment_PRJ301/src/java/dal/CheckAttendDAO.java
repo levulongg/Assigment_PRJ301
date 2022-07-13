@@ -7,7 +7,7 @@ package dal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import model.CheckAttend;
+import model.Check;
 import model.Slot;
 import model.Student;
 
@@ -17,8 +17,8 @@ import model.Student;
  */
 public class CheckAttendDAO extends DBContext {
 
-    public ArrayList<CheckAttend> getAllStudent(int sid) {
-        ArrayList<CheckAttend> alist = new ArrayList<>();
+    public ArrayList<Check> getAllStudent(int sid) {
+        ArrayList<Check> alist = new ArrayList<>();
         String sql = "  select * from CheckAttedance ca , Student s\n"
                 + "  where ca.[SID]= s.SID  and ca.SlotID = ?";
         try {
@@ -29,7 +29,7 @@ public class CheckAttendDAO extends DBContext {
                 Slot s = new Slot();
                 s.setId(rs.getInt(2));
                 Student stu = new Student(rs.getInt(8), rs.getString(9), rs.getString(10), rs.getBoolean(11), rs.getString(12));
-                CheckAttend c = new CheckAttend(rs.getInt(1), s, rs.getBoolean(4), rs.getString(5), stu, rs.getString(6), rs.getString(7));
+                Check c = new Check(rs.getInt(1), s, rs.getBoolean(4), rs.getString(5), stu, rs.getString(6), rs.getString(7));
                 alist.add(c);
             }
         } catch (Exception e) {
