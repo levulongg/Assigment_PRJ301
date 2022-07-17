@@ -19,29 +19,19 @@
 
     <body>
         <c:set var = "i" scope = "page" value = "0"/>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Check Attedance </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="TeachingSchedule">Schedule </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="GroupStudent">Display Group</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+      <header> 
+            <div class="container-fluid">
+                <a href="TeachingSchedule">Schedule </a>
 
-        <div class="container">
+                <a  href="GroupStudent">Display Group</a>
+            </div>
+        </header>
+        <div class
+        <div class="container-fluid">
             <h1>Single Activity Attendance</h1>
             <p >Attendance for <b>${s.getGroup().getSubject().getCode()}</b> with Lecturer <b>${s.getGroup().getInstructor().getUserName()}</b> at Slot <b>${s.getSlot()}</b> on Day <b>${s.getDate()}</b> in Room <b>${s.getRoom().getCode()}</b> at ${s.getGroup().getCampus()}</p>
             <div style="width: 100%;">
-                <form action="CheckAttend" style="position: relative;padding-bottom: 50px;" method="post">
+                <form action="CheckAttend" method="post">
                     <table class="table"  >
                         <thead>
                             <tr>
@@ -72,9 +62,9 @@
                                 <td style="width:30%"></td>
                             </tr>
                         </c:forEach>
-                        <input style="position: absolute; bottom: 5px; right: 0;" type="submit" value="Submit" style="align-items: flex-end" class="btn btn-primary">
                         </tbody>
                     </table>
+                    <input type="submit" value="Submit">
                 </form>
 
             </div>

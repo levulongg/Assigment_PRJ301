@@ -18,24 +18,15 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Check Attendance </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="TeachingSchedule">Schedule </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="GroupStudent">Display Group</a>
-                    </li>
-                </ul>
+        
+        <header> 
+            <div class="container-fluid">
+                <a href="TeachingSchedule">Schedule </a>
+
+                <a  href="GroupStudent">Display Group</a>
             </div>
-        </nav>
-        <div class="container">
+        </header>
+        <div class="container-fluid">
             <form method="get" action="TeachingSchedule" class="viewTimeTable">
                 <div> Campus: 
                     <select name="campus" required>
@@ -50,8 +41,8 @@
                 </div>
             </form>
             <div class="row">
-                <table class="table table-bordered ">
-                    <thead class="bg-primary">
+                <table class="table">
+                    <thead class="">
                         <tr>
                             <th>Slot</th>
                             <th>Date </th>
@@ -73,8 +64,8 @@
                                 <td style="width: 16%;">${s.isStatus()?"<p style='color:green;'>Attend</p>":"<p style='color:red;'>Not yet</p>"}</td>
                                 <c:if test="${s.isStatus()}">
                                     <th><a href="CheckAttend?sid=${s.getId()}&status=${s.isStatus()}">View</a></th>
-                                </c:if>
-                                <c:if test="${!s.isStatus()}">
+                                    </c:if>
+                                    <c:if test="${!s.isStatus()}">
                                     <th><a href="CheckAttend?sid=${s.getId()}&status=${s.isStatus()}">Check</a></th>
 
                                 </c:if>
