@@ -2,39 +2,43 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>ListStudent</servlet-name>
-        <servlet-class>controller.DisplayGroup</servlet-class>
+        <servlet-class>Controller.DisplayGroup</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Attendance</servlet-name>
-        <servlet-class>controller.Check</servlet-class>
+        <servlet-class>Controller.Check</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TimeTable</servlet-name>
-        <servlet-class>controller.Schedule</servlet-class>
+        <servlet-class>Controller.Schedule</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CheckAttend</servlet-name>
-        <servlet-class>controller.CheckAttend</servlet-class>
+        <servlet-class>Controller.CheckAttend</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GroupStudent</servlet-name>
-        <servlet-class>controller.GroupStudent</servlet-class>
+        <servlet-class>Controller.GroupStudent</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TeachingSchedule</servlet-name>
-        <servlet-class>controller.TeachingSchedule</servlet-class>
+        <servlet-class>Controller.TeachingSchedule</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateCheckattend</servlet-name>
-        <servlet-class>controller.UpdateCheckattend</servlet-class>
+        <servlet-class>Controller.UpdateAttend</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Timetable</servlet-name>
-        <servlet-class>controller.Timetable</servlet-class>
+        <servlet-class>Controller.Timetable</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>Controller.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckAttendend</servlet-name>
+        <servlet-class>Controller.CheckAttendend</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CheckAttend</servlet-name>
@@ -59,6 +63,10 @@
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckAttendend</servlet-name>
+        <url-pattern>/CheckAttendend</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
